@@ -1,0 +1,17 @@
+import random
+from datetime import datetime
+#MODULO 1- Registro do Funcionário
+
+nome = input("Digite seu nome:")
+idade = int(input("Digite sua idade:"))
+
+data_de_registro = datetime.today()
+data = data_de_registro.strftime("%d/%m/%Y")
+cartoes = ["R$50,00", "R$250,00", "R$120,00"]
+resultado = random.choice(cartoes)
+
+aniversario = input("Digite a data do seu aniverário:")
+
+print(f"Olá {nome.capitalize()}, seu registro foi concluído com sucesso no dia {data}."
+      f"\nParabéns, houve um sorteio e você ganhou um cartão de compras no valor de {resultado}!")
+
