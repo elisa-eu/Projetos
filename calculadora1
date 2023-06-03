@@ -1,0 +1,29 @@
+import time
+print("="*31)
+print("==========CALCULADORA==========")
+print("="*31)
+time.sleep(1.2)
+
+numero1 = int(input("Digite o primeiro número:"))
+numero2 = int(input("Digite o segundo número:"))
+print("="*31)
+time.sleep(1)
+
+print(f"Agora escolha sua expressão:\nSOMA = +\nSUBTRAÇÃO = -\nMULTIPLICAÇÃO = *\nDIVISÃO = /")
+time.sleep(0.6)
+expressao = input("Sua escolha:")
+print("="*31)
+time.sleep(0.6)
+resultado = 0
+if expressao == "+":
+    resultado = numero1 + numero2
+elif expressao == "-":
+    resultado = numero1 - numero2
+elif expressao == "*":
+    resultado = numero1 * numero2
+elif expressao == "/":
+    resultado = numero1 / numero2
+else:
+    print("Expressão inválida!")
+
+print(f"{numero1} {expressao} {numero2} = {resultado}")
