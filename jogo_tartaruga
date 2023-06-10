@@ -1,0 +1,76 @@
+from turtle import Turtle
+t = Turtle()
+t.speed(1.2)
+
+print("==============JOGO DA TARTARUGA==============")
+print("=" * 45)
+
+while True:
+    direcao = input(f"Qual direção você quer andar?\nFRENTE = f\nTRAS = t"
+                    f"\nDIREITA = d\nESQUERDA = e\nSua resposta: ")
+    print("=="*20)
+    if direcao.lower() == "f":
+        quantidade = int(input("Quantidade de pixels que você deseja andar para frente: "))
+        t.forward(quantidade)
+        resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+        print("==" * 20)
+        while resposta == 1:
+            quantidade = int(input("Quantidade de pixels que você deseja andar para frente: "))
+            t.forward(quantidade)
+            resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+            print("==" * 20)
+        if resposta == 2:
+            pass
+        if resposta == 3:
+            break
+
+    if direcao.lower() == "t":
+        quantidade = int(input("Quantidade de pixels que você deseja andar para trás: "))
+        t.backward(quantidade)
+        resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+        print("==" * 20)
+        while resposta == 1:
+            quantidade = int(input("Quantidade de pixels que você deseja andar para trás: "))
+            t.backward(quantidade)
+            t.forward(quantidade)
+            resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+            print("==" * 20)
+        if resposta == 2:
+            pass
+        if resposta == 3:
+            break
+
+    if direcao.lower() == "d":
+        quantidade = int(input("Quantidade de pixels que você deseja andar para a direita: "))
+        t.right(90)
+        t.forward(quantidade)
+        resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+        print("==" * 20)
+        while resposta == 1:
+            quantidade = int(input("Quantidade de pixels que você deseja andar para a direita: "))
+            t.right(quantidade)
+            t.forward(quantidade)
+            resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+            print("==" * 20)
+        if resposta == 2:
+            pass
+        if resposta == 3:
+            break
+
+    if direcao.lower() == "e":
+        quantidade = int(input("Quantidade de pixels que você deseja andar para a esquerda: "))
+        t.left(90)
+        t.forward(quantidade)
+        resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+        print("==" * 20)
+        while resposta == 1:
+            quantidade = int(input("Quantidade de pixels que você deseja andar para a esquerda: "))
+            t.left(quantidade)
+            t.forward(quantidade)
+            resposta = int(input(f"ANDAR MAIS = 1\nMUDAR A DIREÇÃO = 2\nPARAR DE ANDAR = 3\nSUA RESPOSTA: "))
+            print("==" * 20)
+        if resposta == 2:
+            pass
+        if resposta == 3:
+            break
+
