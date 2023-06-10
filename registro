@@ -1,0 +1,20 @@
+import time
+print("======CADASTRO======")
+print("==" * 10)
+time.sleep(1.2)
+
+nome = ""
+senha = ""
+while nome == "":
+    nome = input("Digite seu nome: ")
+time.sleep(1.2)
+
+while senha == "":
+    senha = input("Digite sua senha: ")
+    if senha != "":
+        confirmar_senha = ""
+        while confirmar_senha != senha:
+            confirmar_senha = input("Confirme sua senha: ")
+time.sleep(1.2)
+
+print(f"Olá, {nome}\nBem vindo(a)")
