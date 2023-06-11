@@ -20,7 +20,7 @@ def divisao(*valores):
     resultado = valores[0]
     for valor in valores[1:]:
         resultado /= valor
-    return int(resultado)
+    return f"{resultado:.2f}"
 
 print("=====CALCULADORA=====")
 print("=" * 21)
@@ -40,7 +40,7 @@ if expressao == 1:
     print("="*25)
     print(f"O resultado é: {resultado1}")
 
-if expressao == 2:
+elif expressao == 2:
     print("SUA ESCOLHA FOI SUBTRAÇÃO")
     print("=" * 25)
     numeros = []
@@ -53,7 +53,7 @@ if expressao == 2:
     print("=" * 25)
     print(f"O resultado é: {resultado2}")
 
-if expressao == 3:
+elif expressao == 3:
     print("SUA ESCOLHA FOI MULTIPLICAÇÃO")
     print("=" * 25)
     numeros = []
@@ -66,7 +66,7 @@ if expressao == 3:
     print("=" * 25)
     print(f"O resultado é: {resultado3}")
 
-if expressao == 4:
+elif expressao == 4:
     print("SUA ESCOLHA FOI DIVISÃO")
     print("=" * 25)
     numeros = []
@@ -78,3 +78,6 @@ if expressao == 4:
     resultado4 = divisao(*numeros)
     print("=" * 25)
     print(f"O resultado é: {resultado4}")
+
+else:
+    print("Expressão INVÁLIDA")
