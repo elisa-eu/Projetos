@@ -1,0 +1,51 @@
+#Agenda de Contatos
+agenda = {}
+
+def adicionar_contatos():
+    nome = input("Digite o nome do contato que deseja adicionar: ")
+    telefone = int(input("Digite o telefone do contato que deseja adicionar: "))
+    agenda[nome.lower()] = telefone
+    print("Contato adicionado com sucesso!")
+
+def excluir_contato():
+    nome = input("Nome do contato que seja excluir: ")
+    if nome.lower() in agenda:
+        del agenda[nome]
+        print("Contato exluído com sucesso!")
+    else:
+        print("Contato não encontrado!")
+def buscar_contato():
+    nome = input("Nome do contato que deseja buscar: ")
+    if nome in agenda:
+        telefone = agenda[nome]
+        print(f"Nome: {nome.capitalize()}")
+        print(f"Telefone: {telefone}")
+
+    else:
+        print("Contato não encontrado")
+
+def menu():
+    print(f"==MENU==\n"
+          f"Adicionar contato = 1\n"
+          f"Deletar contato = 2\n"
+          f"Buscar contato = 3\n"
+          f"Sair = 4")
+
+while True:
+    menu()
+    escolha = input("Escolha entre 1 e 4: ")
+    if int(escolha) == 1:
+        adicionar_contatos()
+
+    elif int(escolha) == 2:
+        excluir_contato()
+
+    elif int(escolha) == 3:
+        buscar_contato()
+
+    elif int(escolha) == 4:
+        break
+
+    else:
+        print("Escolha INVÁLIDA")
+
