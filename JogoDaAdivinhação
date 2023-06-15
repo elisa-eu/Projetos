@@ -1,0 +1,18 @@
+#Jogo Da Adivinhação
+import random
+
+numero = random.randint(1, 100)
+
+print("BEM-VINDO AO JOGO DE ADIVINHAÇÃO")
+print("==" * 16)
+escolha = int(input("Tente adivinhar um número aleatório de 1 a 100\nSUA ESCOLHA: "))
+
+while escolha != numero:
+    if escolha < numero:
+        print("ERROU! É um número MAIOR!")
+    else:
+        print("ERROU! É um número MENOR!")
+    escolha = int(input("TENTE NOVAMENTE: "))
+
+print("ACERTOU! MUITO BEM!")
+print(f"O número era {numero}")
