@@ -1,0 +1,158 @@
+#Jogo Dos Conhecimentos Gerais
+respostas = {
+    "pergunta1": "b",
+    "pergunta2": "c",
+    "pergunta3": "c",
+    "pergunta4": "a",
+    "pergunta5": "e",
+    "pergunta6": "b",
+    "pergunta7": "b",
+    "pergunta8": "c"
+}
+
+pontos = 0
+acertos = 0
+
+pergunta1 = input("\033[1;33m1-Normalmente, quantos litros de sangue uma pessoa tem?"
+                  " Em média, quantos são retirados numa doação de sangue?\n"
+                  "a) Tem entre 2 a 4 litros. São retirados 450 mililitros\n"
+                  "b) Tem entre 4 a 6 litros. São retirados 450 mililitros\n"
+                  "c) Tem 10 litros. São retirados 2 litros\n"
+                  "d) Tem 7 litros. São retirados 1,5 litros\n"
+                  "e) Tem 0,5 litros. São retirados 0,5 litros\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+
+while pergunta1 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA")
+    pergunta1 = input("\033[1;36mSUA RESPOSTA: ")
+
+if pergunta1 == respostas["pergunta1"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta1'].upper()}")
+
+
+pergunta2 = input("\033[1;33m2-De quem é a famosa frase “Penso, logo existo”?\n"
+                  "a) Platão\n"
+                  "b) Galileu Galilei\n"
+                  "c) Descartes\n"
+                  "d) Sócrates\n"
+                  "e) Francis Bacon\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+
+while pergunta2 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta2 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta2 == respostas["pergunta2"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta2'].upper()}")
+
+pergunta3 = input("\033[1;33m3-De onde é a invenção do chuveiro elétrico?\n"
+                  "a) França\n"
+                  "b) Inglaterra\n"
+                  "c) Brasil\n"
+                  "d) Austrália\n"
+                  "e) Itália\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+while pergunta3 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta3 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta3 == respostas["pergunta3"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta3'].upper()}")
+
+pergunta4 = input("\033[1;33m4-Quais são o menor e o maior país do mundo respectivamente?\n"
+                  "a) Vaticano e Rússia\n"
+                  "b) Nauru e China\n"
+                  "c) Mônaco e Canadá\n"
+                  "d) Malta e Estados Unidos\n"
+                  "e) São Marino e Índia\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+while pergunta4 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta4 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta4 == respostas["pergunta4"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta4'].upper()}")
+
+pergunta5 = input("\033[1;33m5-Qual o nome do presidente do Brasil que ficou conhecido como Jango?\n"
+                  "a) Jânio Quadros\n"
+                  "b) Jacinto Anjos\n"
+                  "c) Getúlio Vargas\n"
+                  "d) João Figueiredo\n"
+                  "e) João Goulart\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+while pergunta5 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta5 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta5 == respostas["pergunta5"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta5'].upper()}")
+
+pergunta6 = input("\033[1;33m6-Qual o grupo em que todas as palavras foram escritas corretamente?\n"
+                  "a) Asterístico, beneficiente, meteorologia, entertido\n"
+                  "b) Asterisco, beneficente, meteorologia, entretido\n"
+                  "c) Asterisco, beneficente, metereologia, entretido\n"
+                  "d) Asterístico, beneficiente, metereologia, entretido\n"
+                  "e) Asterisco, beneficiente, metereologia, entretido\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+while pergunta6 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta6 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta6 == respostas["pergunta6"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta6'].upper()}")
+
+pergunta7 = input("\033[1;33m7-Qual o livro mais vendido no mundo a seguir à Bíblia?\n"
+                  "a) O Senhor dos Anéis\n"
+                  "b) Dom Quixote\n"
+                  "c) O Pequeno Príncipe\n"
+                  "d) Ela, a Feiticeira\n"
+                  "e) Um Conto de Duas Cidades\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+while pergunta7 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta7 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta7 == respostas["pergunta7"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta7'].upper()}")
+
+pergunta8 = input("\033[1;33m8-Quantas casas decimais tem o número pi?\n"
+                  "a) Duas\n"
+                  "b) Centenas\n"
+                  "c) Infinitas\n"
+                  "d) Vinte\n"
+                  "e) Milhares\n"
+                  "\033[1;36mSUA RESPOSTA: ")
+
+while pergunta8 not in ["a", "b", "c", "d", "e"]:
+    print("\033[1;30mResposta INVÁLIDA!")
+    pergunta8 = input("\033[1;36mSUA RESPOSTA: ")
+if pergunta8 == respostas["pergunta8"]:
+    pontos += 12.5
+    print("\033[1;32mACERTOU! Muito bem!")
+    acertos += 1
+else:
+    print(f"\033[1;31mERROU! A resposta correta é {respostas['pergunta8'].upper()}")
+
+print(f"Você fez {pontos} pontos com um total de {acertos} acertos!")
