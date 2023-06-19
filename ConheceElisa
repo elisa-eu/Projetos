@@ -1,0 +1,65 @@
+print("\033[1;31m=="*20)
+print("\033[1;31m========VOCÊ CONHECE A ELISA????========")
+print("\033[1;31m=="*20)
+
+respostas = {"resposta1": "a",
+             "resposta2": "c",
+             "resposta3": "d",
+             "resposta4": "b",
+             "resposta5": "b"}
+pontos = 0
+
+pergunta1 = input(f"\033[1;33mComida Favorita?\na)Batata\nb)Ovo\nc)Chocolate\nd)Macarrão\n"
+                  f"\033[3;35mSUA RESPOSTA: ")
+while pergunta1 not in ["a", "b", "c", "d"]:
+    pergunta1 = input(f"\033[1;36mResposta INVÁLIDA!\n\033[3;35mSUA RESPOSTA: ")
+if pergunta1 == respostas["resposta1"]:
+    print("\033[1;32mACERTOU! Ganhou 10 pontos!")
+    pontos += 10
+else:
+    print("\033[1;31mERROU!")
+
+pergunta2 = input(f"\033[1;33mCor favorita?\na)Vermelho\nb)Roxo\nc)Preto\nd)Branco\n"
+                  f"\033[3;35mSUA RESPOSTA: ")
+while pergunta2 not in ["a", "b", "c", "d"]:
+    pergunta2 = input(f"\033[1;36mResposta INVÁLIDA!\n\033[3;35mSUA RESPOSTA: ")
+if pergunta2 == respostas["resposta2"]:
+    print("\033[1;32mACERTOU! Ganhou 10 pontos!")
+    pontos += 10
+else:
+    print("\033[1;31mERROU!")
+
+pergunta3 = input(f"\033[1;33mData do aniversário?\na)30/06/2007\nb)30/07/2006\nc)31/07/2006\nd)30/06/2006\n"
+                  f"\033[3;35mSUA RESPOSTA: ")
+while pergunta3 not in ["a", "b", "c", "d"]:
+    pergunta3 = input(f"\033[1;36mResposta INVÁLIDA!\n\033[3;35mSUA RESPOSTA: ")
+if pergunta3 == respostas["resposta3"]:
+    print("\033[1;32mACERTOU! Ganhou 10 pontos!")
+    pontos += 10
+else:
+    print("\033[1;31mERROU!")
+
+pergunta4 = input(f"\033[1;33mSabor de bolo favorito:\na)Chocolate com morango\nb)Leite ninho com morango\nc)Leite ninho"
+                  f"\nd)Morango com nozes\n\033[3;35mSUA RESPOSTA:")
+while pergunta4 not in ["a", "b", "c", "d"]:
+    pergunta4 = input(f"\033[1;36mResposta INVÁLIDA!\n\033[3;35mSUA RESPOSTA: ")
+if pergunta4 == respostas["resposta4"]:
+    print("\033[1;32mACERTOU! Ganhou 10 pontos!")
+    pontos += 10
+else:
+    print("\033[1;31mERROU!")
+
+pergunta5 = input(f"\033[1;33mQuantas tatuagens Elisa tem?\na)1\nb)2\nc)3\nd)4\n\033[3;35mSUA RESPOSTA: ")
+while pergunta5 not in ["a", "b", "c", "d"]:
+    pergunta5 = input(f"\033[1;36mReposta INVÁLIDA!\n\033[3;35mSUA RESPOSTA: ")
+if pergunta5 == respostas["resposta5"]:
+    print("\033[1;32mACERTOU! Ganhou 10 pontos!")
+    pontos += 10
+else:
+    print("\033[1;31mERROU!")
+
+if pontos >= 30:
+    print(f"\033[1;36mParabéns! Você conhece a elisa muito bem! Fez um total de {pontos} pontos.")
+
+else:
+    print(f"\033[1;36mVocê não conhece a Elisa muito bem! Fez um total de {pontos} pontos.")
