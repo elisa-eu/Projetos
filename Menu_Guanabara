@@ -1,32 +1,50 @@
-print("-" * 16)
-print("----MEU MENU----")
-print("-" * 16)
+cadastros = []
+def linha(tam=36):
+    return "=" * tam
 
-usuario = ""
-lista = (1, 2, 3)
-cadastros = {}
-contagem = 0
 
-while usuario != 3:
-    usuario = int(input(f"1- Ver pessoas cadastradas.\n"
-                        f"2- Cadastrar nova pessoa.\n"
-                        f"3- Sair do sistema.\n"
-                        f"SUA OPÇÃO: "))
-    contagem += 1
+def cabecalho(txt):
+    print(linha())
+    print(txt.center(43))
+    print(linha())
 
-    if usuario == 1:
+
+def leiausuario(msg):
+    while True:
+        try:
+            n = int(input(f"{msg}: "))
+        except (ValueError, TypeError):
+            print("\033[31mERRO! Digie um número inteiro válido!\033[m")
+            continue
+        except (KeyboardInterrupt):
+            print("\033[31mUsuario prefiriu não digitar esse número!\033[m")
+            return 0
+        else:
+            return n
+
+
+def menu(lista):
+    cabecalho("\033[3;34mMEU MENU\033[m")
+    c = 1
+    for item in lista:
+        print(f"{c}- {item}")
+        c += 1
+    opc = leiausuario("\033[1;36mSUA ESCOLHA\033[m")
+    return opc
+
+def cadastrar():
+    nome = input("Digite o nome da pessoa: ")
+    idade = input("Digite a idade da pessoa: ")
+    cadastros.append(f"Nome: {nome.capitalize()} | Idade: {idade}")
+
+
+while True:
+    escolha = menu(["Ver pessoas cadastradas", "Cadastrar nova pessoa", "Sair do sistema"])
+    if escolha == 1:
         print(cadastros)
-
-    elif usuario == 2:
-        nome = input("Digite o nome da pessoa: ")
-        idade = int(input("Digite a idade da pessoa: "))
-        cadastros["Nome"+str(contagem)] = nome.capitalize()
-        cadastros["Idade"+str(contagem)] = idade
-        print("Pessoa cadastrada com sucesso!")
-
-    elif usuario == 3:
-        print("SISTEMA FINALIZADO")
+    elif escolha == 2:
+        cadastrar()
+    elif escolha == 3:
         break
-
     else:
-        print("RESPOSTA INVÁLIDA!")
+        print("\033[31mRESPOSTA INVÁLIDA!\033[m")
