@@ -1,0 +1,32 @@
+print("-" * 16)
+print("----MEU MENU----")
+print("-" * 16)
+
+usuario = ""
+lista = (1, 2, 3)
+cadastros = {}
+contagem = 0
+
+while usuario != 3:
+    usuario = int(input(f"1- Ver pessoas cadastradas.\n"
+                        f"2- Cadastrar nova pessoa.\n"
+                        f"3- Sair do sistema.\n"
+                        f"SUA OPÇÃO: "))
+    contagem += 1
+
+    if usuario == 1:
+        print(cadastros)
+
+    elif usuario == 2:
+        nome = input("Digite o nome da pessoa: ")
+        idade = int(input("Digite a idade da pessoa: "))
+        cadastros["Nome"+str(contagem)] = nome.capitalize()
+        cadastros["Idade"+str(contagem)] = idade
+        print("Pessoa cadastrada com sucesso!")
+
+    elif usuario == 3:
+        print("SISTEMA FINALIZADO")
+        break
+
+    else:
+        print("RESPOSTA INVÁLIDA!")
