@@ -1,83 +1,89 @@
+#Calculadora simples
+lista = []
+valores = []
+def linha(tam=40):
+    print("="*tam)
+
+def cabecalho(txt):
+    linha()
+    print(txt.center(40))
+    linha()
+
+cabecalho("MINHA CALCULADORA")
+
+def menu(lista):
+    c = 1
+    for item in lista:
+        print(f"{c}- {item}")
+        c += 1
+    while True:
+        try:
+            opc = int(input("SUA ESCOLHA: "))
+            break
+        except:
+            print("Digite um numero inteiro válido!")
+    return opc
+
 def soma(*valores):
     resultado = 0
     for valor in valores:
         resultado += valor
-    return resultado
+    print(f"O resultado da soma é {resultado}")
 
 def subtracao(*valores):
     resultado = valores[0]
     for valor in valores[1:]:
         resultado -= valor
-    return resultado
+    print(f"O resultado da subtração é {resultado}")
 
 def multiplicacao(*valores):
     resultado = 1
     for valor in valores:
         resultado *= valor
-    return resultado
+    print(f"O resultado da multiplicação é {resultado}")
 
 def divisao(*valores):
     resultado = valores[0]
     for valor in valores[1:]:
         resultado /= valor
-    return f"{resultado:.2f}"
+    print(f"O resultado da divisão é {resultado}")
 
-print("=====CALCULADORA=====")
-print("=" * 21)
+escolha = menu(["SOMA", "SUBTRAÇÃO", "MULTIPLICAÇÃO", "DIVISÃO"])
+if escolha == 1:
+    while True:
+        numero = int(input("Digite um número para somar a outro(s): "))
+        print("Se quiser PARAR de digitar, DIGITE 0")
+        valores.append(numero)
+        if numero == 0:
+            break
+    soma(*valores)
 
-expressao = int(input(f"QUAL EXPRESSAO DESEJA FAZER?\nSOMA = 1\nSUBTRAÇÃO = 2\nMULTIPLICAÇÃO = 3\nDIVISÃO = 4\nSUA ESCOLHA: "))
+elif escolha == 2:
+    while True:
+        numero = int(input("Digite o valor para subtrair: "))
+        print("Se quiser PARAR de digitar, DIGITE 0")
+        valores.append(numero)
+        if numero == 0:
+            break
+    subtracao(*valores)
 
-if expressao == 1:
-    print("SUA ESCOLHA FOI SOMA")
-    print("=" * 25)
-    numeros = []
-    numero = int(input("DIGITE UM NÚMERO: "))
-    print("se não tiver mais números para digitar, DIGITE 0")
-    while numero != 0:
-        numeros.append(numero)
-        numero = int(input("DIGITE UM NÚMERO: "))
-    resultado1 = soma(*numeros)
-    print("="*25)
-    print(f"O resultado é: {resultado1}")
+elif escolha == 3:
+    while True:
+        numero = int(input("Digite o número que deseja multiplicar: "))
+        print("Se quiser PARAR de digitar, DIGITE 1")
+        valores.append(numero)
+        if numero == 1:
+            break
+    multiplicacao(*valores)
 
-elif expressao == 2:
-    print("SUA ESCOLHA FOI SUBTRAÇÃO")
-    print("=" * 25)
-    numeros = []
-    numero = int(input("DIGITE UM NÚMERO: "))
-    print("se não tiver mais números para digitar, DIGITE 0")
-    while numero != 0:
-        numeros.append(numero)
-        numero = int(input("DIGITE UM NÚMERO: "))
-    resultado2 = subtracao(*numeros)
-    print("=" * 25)
-    print(f"O resultado é: {resultado2}")
-
-elif expressao == 3:
-    print("SUA ESCOLHA FOI MULTIPLICAÇÃO")
-    print("=" * 25)
-    numeros = []
-    numero = int(input("DIGITE UM NÚMERO: "))
-    print("se não tiver mais números para digitar, DIGITE 0")
-    while numero != 0:
-        numeros.append(numero)
-        numero = int(input("DIGITE UM NÚMERO: "))
-    resultado3 = multiplicacao(*numeros)
-    print("=" * 25)
-    print(f"O resultado é: {resultado3}")
-
-elif expressao == 4:
-    print("SUA ESCOLHA FOI DIVISÃO")
-    print("=" * 25)
-    numeros = []
-    numero = int(input("DIGITE UM NÚMERO: "))
-    print("se não tiver mais números para digitar, DIGITE 0")
-    while numero != 0:
-        numeros.append(numero)
-        numero = int(input("DIGITE UM NÚMERO: "))
-    resultado4 = divisao(*numeros)
-    print("=" * 25)
-    print(f"O resultado é: {resultado4}")
+elif escolha == 4:
+    while True:
+        numero = int(input("Digite o número que deseja dividir: "))
+        print("Se quiser PARAR de digitar, DIGITE 1")
+        valores.append(numero)
+        if numero == 1:
+            break
+    divisao(*valores)
 
 else:
-    print("Expressão INVÁLIDA")
+    print("Escolha INVÁLIDA")
