@@ -1,0 +1,42 @@
+import random
+#Registro em um site de compras
+clientes = []
+cupons = ["80% OFF", "65% OFF", "50% OFF", "35% OFF", "20% OFF", "10% OFF", "0%OFF"]
+
+def linha(tam = 40):
+      print("="* tam)
+
+def cabecalho(txt):
+      linha()
+      print(txt.center(40))
+      linha()
+
+def cadastro():
+      nome = input("Digite o seu nome: ")
+      email = input("Digite seu email: ")
+      while True:
+            try:
+                  idade = int(input("Digite sua idade: "))
+                  break
+            except:
+                  print("Digite um número inteiro válido!")
+      senha = input('Crie uma senha: ')
+      senha2 = ""
+      while senha != senha2:
+            senha2= input("Confirme a senha: ")
+            if senha != senha2:
+                  print("Digitou a senha errada!Tente novamente")
+            elif senha == senha2:
+                  break
+
+      clientes.append(f"Nome: {nome.capitalize()} | Email: {email} | Idade: {idade} | Senha: {senha}")
+
+def desconto():
+      print(f"Olá, você participou de um sorteio e ganhou um cupom de desconto de {random.choice(cupons)}")
+
+
+cabecalho("BEM VINDO A BYSTORE")
+cadastro()
+print(clientes)
+desconto()
+
