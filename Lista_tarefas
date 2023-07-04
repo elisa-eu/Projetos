@@ -17,7 +17,7 @@ def menu(lista):
 def adicionar_tarefa():
     c = 1
     while True:
-        adicionar = input("\033[34mDigite o nome da tarefa que deseja adicionar: ")
+        adicionar = input("\033[34mDigite o nome da tarefa que deseja adicionar: \033[m")
         print("\033[34mDe não quiser mais adicionar digite \033[31mn \033[mou \033[31mN")
         tarefas.append(f"{adicionar.capitalize()}")
         print("\033[mTarefa adicionada com sucesso!")
@@ -28,12 +28,12 @@ def adicionar_tarefa():
 
 def deletar_tarefa():
     if len(tarefas) == 0:
-        print("\033[31mNão há tarefas para deletar.")
+        print("\033[31mNão há tarefas para deletar.\033[m")
     else:
         print("\033[35mTarefas:")
         for i, tarefa in enumerate(tarefas):
             print(f"{i + 1}- {tarefa}")
-        deletar = int(input("\033[1;33mDigite o número da tarefa que deseja deletar: "))
+        deletar = int(input("\033[1;33mDigite o número da tarefa que deseja deletar: \033[m"))
         if deletar > 0 and deletar <= len(tarefas):
             tarefas.pop(deletar - 1)
             print("\033[31mTarefa deletada com sucesso!\033[m")
@@ -47,7 +47,7 @@ def marcar_realizada():
         print("\033[35mTarefas:")
         for i, tarefa in enumerate(tarefas):
             print(f"{i + 1}- {tarefa}")
-        marcar = int(input("\033[31mDigite o número da tarefa que deseja marcar como realizada: "))
+        marcar = int(input("\033[1;33mDigite o número da tarefa que deseja marcar como realizada: "))
         if marcar > 0 and marcar <= len(tarefas):
             tarefa = tarefas[marcar - 1]
             tarefas[marcar - 1] = f"\033[31m{tarefa}\033[35m"
@@ -62,7 +62,12 @@ def mostrar_tarefas():
 cabecalho("\033[35mLista de Tarefas")
 while True:
     menu(["Adicionar tarefa", "Deletar tarefa", "Marcar tarefa como realizada", "Mostrar tarefas", "Sair do programa"])
-    escolha = int(input("SUA ESCOLHA: "))
+    while True:
+        try:
+            escolha = int(input("\033[1;33mSUA ESCOLHA: \033[m"))
+            break
+        except ValueError:
+            print("\033[31mDigite um número válido!\033[m")
     if escolha == 1:
         adicionar_tarefa()
 
@@ -80,5 +85,4 @@ while True:
 
     else:
         print("Escolha um número entre 1 e 5!")
-
 
